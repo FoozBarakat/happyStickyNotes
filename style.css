@@ -3,13 +3,27 @@
 	padding: 0;
 }
 
+body {
+	background: #fff url(img/background.jpg) no-repeat center center/cover;
+	height: 100vh;
+	overflow: hidden;
+}
+
+h1 {
+	color: #fff;
+	text-align: center;
+	font-family: 'Caveat', cursive;
+	font-weight: lighter;
+	font-size: 60px;
+	margin: 20px auto;
+}
+
 #btn_new {
 	width: 100px;
 	height: 40px;
 	border-radius: 10px;
 	font-size: 20px;
 	font-family: cursive;	
-	float: left;
 	margin-right: 10px;
 }
 
@@ -18,46 +32,77 @@
 	height: 40px;
 	border: 1px solid black;
 	cursor: pointer;
-	display: inline-block;
+	display: block;
+	float: left;
+	margin: 10px 10px;
 }
 
 .green {
-	background-color: green;
+	background-color: #BCF38F;
 }
 
 .yellow {
-	background-color: yellow;
+	background-color: #F4E78E;
 }
 
 .orange {
-	background-color: orange;
+	background-color: #FDB16D;
 }
 
 .blue {
-	background-color: blue;
+	background-color: #95A3F4;
+}
+
+.pink {
+	background-color: #FD99B3;
 }
 
 .sticky {
-	width: 200px;
-	height: 180px;
-	border: 2px solid black;
-	border-radius: 10px;
-	box-shadow: 6px 6px 3px gray;
-	float: left;
-	margin: 10px;
-	padding: 5px;
+	width: 220px;
+	height: 200px;
+	box-shadow: 3px 3px 3px gray;
+	margin: 10px auto;
 	cursor: all-scroll;
 }
 
 .sticky textarea {
-	width: 95%;
-	height: 95%;
+	width: 75%;
+	height: 75%;
 	font-size: 20px;
 	border: none;
 	background: transparent;
 	resize: none;
+	overflow: hidden;
 }
 
 .sticky textarea:focus {
 	outline: none;
+}
+
+#img_add {
+	float: right;
+	height: 40px;
+	width: 40px;
+	cursor: pointer;
+}
+
+#div_add {
+	background-color: #ccc;
+	height: 400px;
+	width: 600px;
+	margin: 50px auto;
+	display: none;
+}
+
+#btn_close {
+	background-color: #fff;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	font-size: 20px;
+	font-weight: bold;
+	float: right;
+	margin: 15px;
+	cursor: pointer;
 }
