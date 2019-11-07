@@ -1,0 +1,63 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#btn_new {
+	width: 100px;
+	height: 40px;
+	border-radius: 10px;
+	font-size: 20px;
+	font-family: cursive;	
+	float: left;
+	margin-right: 10px;
+}
+
+.colors {
+	width: 40px;
+	height: 40px;
+	border: 1px solid black;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.green {
+	background-color: green;
+}
+
+.yellow {
+	background-color: yellow;
+}
+
+.orange {
+	background-color: orange;
+}
+
+.blue {
+	background-color: blue;
+}
+
+.sticky {
+	width: 200px;
+	height: 180px;
+	border: 2px solid black;
+	border-radius: 10px;
+	box-shadow: 6px 6px 3px gray;
+	float: left;
+	margin: 10px;
+	padding: 5px;
+	cursor: all-scroll;
+}
+
+.sticky textarea {
+	width: 95%;
+	height: 95%;
+	font-size: 20px;
+	border: none;
+	background: transparent;
+	resize: none;
+}
+
+.sticky textarea:focus {
+	outline: none;
+}
