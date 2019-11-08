@@ -3,15 +3,17 @@ var students = [{name: 'abdelslam'}, {name: 'abdlrrahman'}, {name: 'abdo'},
 				{name: 'amera'}, {name: 'aouini'}, {name: 'anas'}, {name: 'bilel'},
 				{name: 'dhia'}, {name: 'essam'}, {name: 'fares'}, {name: 'fatima'},
 				{name: 'firas'}, {name: 'khoubaieb'}, {name: 'farouk'},
-				{name: 'fooz'}, {name: 'hmam'}, {name: 'hamza'}, {name: 'hania'}, 
+				{name: 'fooz'},///////////// ///////////////
+				{name: 'hmam'}, {name: 'hamza'}, {name: 'hania'}, 
 				{name: 'hashem'}, {name: 'heni'}, {name: 'houda'}, {name: 'insaf'},
 				{name: 'jhhed'}, {name: 'lina'}, {name: 'maher'}, {name: 'malik'},
-				{name: 'mehdi'}, {name: 'slaimia'}, {name: 'belkheir'}, {name: 'weslati'},
+				{name: 'mehdi'}, {name: 'slaimia'},//////////////////////////
+				{name: 'belkheir'}, {name: 'weslati'},
 				{name: 'fared'}, {name: 'sbeta'}, {name: 'muftah'}, {name: 'nejah'}, 
 				{name: 'bara'}, {name: 'ons'}, {name: 'ruba'}, {name: 'salim'}, {name: 'sofian'},
 				{name: 'mejri'}, {name: 'znazen'}, {name: 'wajdii'}, {name: 'zied'},
 				{name: 'matt'}, {name: 'yousef'}, {name: 'tam'}, {name: 'seif'}, {name: 'omar'}, {name: 'raghda'}];
-				 
+
 
 var id = 1;
 var currentSticky = '';
@@ -19,6 +21,24 @@ var index;
 var color = 'yellow';
 var showName = '';
 
+////////////////////////////////////////////////		 
+var displaySticky = function(noteText) {
+	var newNote = $("<div class='sticky " + color + "' id='" + currentSticky + "'>" + '<h3>' + noteText +'</h3>' + "</div>").draggable({stack: ".sticky"});
+	$('textarea').val("");
+	$('#container').append(newNote);
+	var x = "<h3 class='name positionName'>" + showName + "</h3>";
+	$('#' + currentSticky).append(x);
+	showName = '';
+	$('#div_add').hide();
+}
+
+var addSticky = function(noteText) {
+	students[index][currentSticky] = noteText;
+}
+
+
+
+//////////////////////////////////////////////////////////////////////////
 $('#img_add').click( function() {
 	var name =  prompt('Please enter your name');
 	var notStudent;
@@ -49,24 +69,20 @@ $('#img_add').click( function() {
 	}
 });
 
+//////////////////////////////////////////////////////////////////////////
 // add new sticky note
 $('#btn_new').click( function() {
 	var noteText = $('textarea').val();
 	if (noteText !== "") {
-	students[index][currentSticky] = noteText;
-	var newNote = $("<div class='sticky " + color + "' id='" + currentSticky + "'>" + '<h3>' + noteText +'</h3>' + "</div>").draggable({stack: ".sticky"});
-	$('textarea').val("");
-	$('#container').append(newNote);
-	var x = "<h3 class='name positionName'>" + showName + "</h3>";
-	$('#' + currentSticky).append(x);
-	showName = '';
-	$('#div_add').hide();
+	addSticky(noteText);
+	displaySticky(noteText);
 	} else {
 		alert('the note is empty!');
 	}
 
 });
 
+/////////////////////////////////////////////////////
 // change the color of sticky note
  $('.colors').click(function() {
  	if (currentSticky !== '') {
@@ -76,14 +92,15 @@ $('#btn_new').click( function() {
  	}
  }); 
 
+///////////////////////////////////////////////////////
  // close
  $('#div_add').on('ckick', 'button[id=btn_close]', function() {
  	$('textarea').val("");
  	$('#div_add').hide();
  })
 
+///////////////////////////////////////////////////////////
  // show the name
-
  $('#sticky_place').on('click', 'input[type=checkbox]', function(event) {
 
  	if (event.target.checked) {
