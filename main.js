@@ -5,7 +5,8 @@ var students = [
 
 var id = 1;
 var currentSticky = '';
-
+var index;
+var color = 'pink';
 $('#img_add').click( function() {
 	var name =  prompt('Please enter your list name');
 	var notStudent;
@@ -15,18 +16,19 @@ $('#img_add').click( function() {
 
 	if (name !== null) {
 
-		students.forEach(function(student) {
-			if (student['name'] === name) {
+		for (var i = 0; i < students.length; i++) {
+			if (students[i]['name'] === name) {
 				notStudent = 'false';
+				$('#div_add').append('<h1>' + name + '</h1>');
 				var note = $("<div class='sticky pink' id='sticky" + id + "'" + "><textarea></textarea></div>")
 				currentSticky = 'sticky' + id;
 				id++;
+				index = i;
 				$('#div_add').append(note);
-				$('#div_add').append('<h1>' + name + '</h1>');
-				$('#div_add').show();
-				
-			} 
-		});
+				$('#div_add').show();				
+			}
+		} 
+		
 
 		if (notStudent === undefined) {
 			alert('Your not student in RBK');
@@ -34,42 +36,35 @@ $('#img_add').click( function() {
 	}
 });
 
-//////////////////////////////////////////////
-
 // add new sticky note
 $('#btn_new').click( function() {
 	var noteText = $('textarea').val();
-	students[currentSticky] = noteText;
-	var newNote = $("<div class='sticky pink id='" + currentSticky + "'>" + noteText + "</div>").draggable({stack: ".sticky"});
+	if (noteText !== "") {
+	students[index][currentSticky] = noteText;
+	var newNote = $("<div class='sticky " + color + "' id='" + currentSticky + "'>" + '<h3>' + noteText + '</h3>' + "</div>").draggable({stack: ".sticky"});
+	$('textarea').val("");
 	$('#container').append(newNote);
 	$('#div_add').hide();
+	} else {
+		alert('the note is empty!');
+	}
+
 });
 
 // change the color of sticky note
  $('.colors').click(function() {
  	if (currentSticky !== '') {
- 		var color = $(this).attr('class').split(' ')[0];
+ 		color = $(this).attr('class').split(' ')[0];
  		$('#' + currentSticky).removeClass();
  		$('#' + currentSticky).addClass('sticky ' + color);
  	}
  }); 
 
-// change the z-index
+ // close
+ $('#btn_close').click(function() {
+ 	textarea.val('');
+ 	$('#div_add').hide();
+ });
 
-$('#container').on('click', 'textarea', function() {
-	var z_index = getMaxZ_index('.sticky');
-	$(this).parent().css('z-index', z_index + 1);
-});
-
-function getMaxZ_index(elment) {
-	var max = 0;
-
-	$(elment).each( function() {
-		var z = $(this).css('z-index');
-		//alert(z);
-		max = Math.max(max, z);
-	});
-	return max;
-}
 
 
