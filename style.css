@@ -116,8 +116,8 @@ input {
 
 #img_add {
 	float: right;
-	height: 50px;
-	width: 50px;
+	height: 70px;
+	width: 70px;
 	cursor: pointer;
 	position: fixed;
 	top: 600px;

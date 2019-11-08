@@ -1,18 +1,19 @@
-var students = [{name: 'abdelslam'}, {name: 'abdlrrahman'}, {name: 'abdo'},
-				{name: 'adem'}, {name: 'adnen'}, {name: 'ahmed'}, {name: 'ali'},
-				{name: 'amera'}, {name: 'aouini'}, {name: 'anas'}, {name: 'bilel'},
-				{name: 'dhia'}, {name: 'essam'}, {name: 'fares'}, {name: 'fatima'},
-				{name: 'firas'}, {name: 'khoubaieb'}, {name: 'farouk'},
-				{name: 'fooz'},///////////// ///////////////
-				{name: 'hmam'}, {name: 'hamza'}, {name: 'hania'}, 
-				{name: 'hashem'}, {name: 'heni'}, {name: 'houda'}, {name: 'insaf'},
-				{name: 'jhhed'}, {name: 'lina'}, {name: 'maher'}, {name: 'malik'},
-				{name: 'mehdi'}, {name: 'slaimia'},//////////////////////////
-				{name: 'belkheir'}, {name: 'weslati'},
-				{name: 'fared'}, {name: 'sbeta'}, {name: 'muftah'}, {name: 'nejah'}, 
-				{name: 'bara'}, {name: 'ons'}, {name: 'ruba'}, {name: 'salim'}, {name: 'sofian'},
-				{name: 'mejri'}, {name: 'znazen'}, {name: 'wajdii'}, {name: 'zied'},
-				{name: 'matt'}, {name: 'yousef'}, {name: 'tam'}, {name: 'seif'}, {name: 'omar'}, {name: 'raghda'}];
+var students = [ {name: 'fooz', sticky1:'kjgdfdfskjl'}];
+				// {name: 'abdlrrahman'}, {name: 'abdo'},
+				// {name: 'adem'}, {name: 'adnen'}, {name: 'ahmed'}, {name: 'ali'},
+				// {name: 'amera'}, {name: 'aouini'}, {name: 'anas'}, {name: 'bilel'},
+				// {name: 'dhia'}, {name: 'essam'}, {name: 'fares'}, {name: 'fatima'},
+				// {name: 'firas'}, {name: 'khoubaieb'}, {name: 'farouk'},
+				// {name: 'fooz', sticky1:"hgjghgkhghgkjhgg", sticky2:"klhlsdhjdh"},///////////// ///////////////
+				// {name: 'hmam'}, {name: 'hamza'}, {name: 'hania'}, 
+				// {name: 'hashem'}, {name: 'heni'}, {name: 'houda'}, {name: 'insaf'},
+				// {name: 'jhhed'}, {name: 'lina'}, {name: 'maher'}, {name: 'malik'},
+				// {name: 'mehdi'}, {name: 'slaimia', sticky3: 'dlsdfkjsfdkjl'},//////////////////////////
+				// {name: 'belkheir'}, {name: 'weslati'},
+				// {name: 'fared'}, {name: 'sbeta'}, {name: 'muftah'}, {name: 'nejah'}, 
+				// {name: 'bara'}, {name: 'ons'}, {name: 'ruba'}, {name: 'salim'}, {name: 'sofian'},
+				// {name: 'mejri'}, {name: 'znazen'}, {name: 'wajdii'}, {name: 'zied'},
+				// {name: 'matt'}, {name: 'yousef'}, {name: 'tam'}, {name: 'seif'}, {name: 'omar'}, {name: 'raghda'}];
 
 
 var id = 1;
@@ -35,6 +36,18 @@ var displaySticky = function(noteText) {
 var addSticky = function(noteText) {
 	students[index][currentSticky] = noteText;
 }
+
+// for (var i = 0; i < students.length; i++) {
+// 	var person;
+// 	for (var key in students[i]) {
+// 		if (key === 'name') {
+// 			person = students[i][key];
+// 			console.log(person)
+// 		} else {
+// 			displaySticky(students[i][key]);
+// 		}
+// 	}
+// }
 
 
 
@@ -76,6 +89,7 @@ $('#btn_new').click( function() {
 	if (noteText !== "") {
 	addSticky(noteText);
 	displaySticky(noteText);
+	showName = '';
 	} else {
 		alert('the note is empty!');
 	}
@@ -94,10 +108,9 @@ $('#btn_new').click( function() {
 
 ///////////////////////////////////////////////////////
  // close
- $('#div_add').on('ckick', 'button[id=btn_close]', function() {
- 	$('textarea').val("");
- 	$('#div_add').hide();
- })
+ $('#btn_close').click( function() {
+ 	$('#div_add').rmove();
+ });
 
 ///////////////////////////////////////////////////////////
  // show the name
@@ -108,18 +121,7 @@ $('#btn_new').click( function() {
  	} else {
  		showName = '';
  	}
+
 }); 
 
 
-///////
-// $( "#clickme" ).click(function() {
-//   $( "#book" ).animate({
-//     width: [ "toggle", "swing" ],
-//     height: [ "toggle", "swing" ],
-//     opacity: "toggle"
-//   }, 5000, "linear", function() {
-//     $( this ).after( "<div>Animation complete.</div>" );
-//   });
-// })
-
-$('#container').on('click', )
