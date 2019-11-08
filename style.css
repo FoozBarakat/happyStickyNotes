@@ -19,8 +19,12 @@ h1 {
 }
 
 h3 {
-	font-size: 23px;
-	margin-top: 10px;
+	font-size: 20px;
+}
+
+input {
+	height: 18px;
+	width: 18px;
 }
 
 #btn_new {
@@ -91,6 +95,9 @@ h3 {
 	height: 40px;
 	width: 40px;
 	cursor: pointer;
+	position: fixed;
+	top: 620px;
+	right: 50px;
 }
 
 #div_add {
