@@ -1,7 +1,7 @@
-var students = [
-				{name: 'fooz'},				
-				{name: 'amera'}
-				];
+var students = [{name: 'abdelslam'}, {name: 'abdlrrahman'}, {name: 'abdo'},
+				{name: 'adem'}, {name: 'adnen'}, {name: 'ahmed'}, {name: 'ali'},
+				{name: 'amera'}, {name: 'aouini'}, {name: 'anas'}, {name: 'bilel'}];
+				
 
 var id = 1;
 var currentSticky = '';
@@ -22,10 +22,8 @@ $('#img_add').click( function() {
 			if (students[i]['name'] === name) {
 				notStudent = 'false';
 				$('#sticky_place').html('');
-				//$('#sticky_place').append("<h3 class='nam'><input type='checkbox' id='checkbox'>" + name + "</h3>");
 				var holdName = "<h3 class='name'><input type='checkbox' id='checkbox'>" + name + "</h3>";
-				console.log(typeof holdName);
-				var note = $("<div class='sticky yellow' id='sticky" + id + "'" + "><textarea></textarea></div>")
+				var note = $("<div class='sticky yellow' id='sticky" + id + "'" + "><textarea></textarea></div>");
 				currentSticky = 'sticky' + id;
 				id++;
 				index = i;
@@ -68,7 +66,7 @@ $('#btn_new').click( function() {
  }); 
 
  // close
- $('#div_add').on('ckick', $('#img_add'), function() {
+ $('#div_add').on('ckick', 'button[id=btn_close]', function() {
  	$('textarea').val("");
  	$('#div_add').hide();
  })
