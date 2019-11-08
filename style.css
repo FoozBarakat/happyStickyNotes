@@ -23,11 +23,16 @@ h3 {
 	font-family: 'Caveat', cursive;
 	font-weight: lighter;
 }
+.positionText {
+	padding-top: 50px;
+}
 
 .name {
 	color: #fff;
 	margin-left: 50px;
 	font-size: 30px;
+	font-family: 'Caveat', cursive;
+	font-weight: lighter;
 }
 
 .positionName {

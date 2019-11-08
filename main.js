@@ -23,10 +23,10 @@ var showName = '';
 
 ////////////////////////////////////////////////		 
 var displaySticky = function(noteText) {
-	var newNote = $("<div class='sticky " + color + "' id='" + currentSticky + "'>" + '<h3>' + noteText +'</h3>' + "</div>").draggable({stack: ".sticky"});
+	var newNote = $("<div class='sticky " + color + "' id='" + currentSticky + "'>" + '<h3 class="positionText">' + noteText +'</h3>' + "</div>").draggable({stack: ".sticky"}).selectable();
 	$('textarea').val("");
 	$('#container').append(newNote);
-	var x = "<h3 class='name positionName'>" + showName + "</h3>";
+	var x = "<h4 class='name positionName'>" + showName + "</h4>";
 	$('#' + currentSticky).append(x);
 	showName = '';
 	$('#div_add').hide();
@@ -111,3 +111,15 @@ $('#btn_new').click( function() {
 }); 
 
 
+///////
+// $( "#clickme" ).click(function() {
+//   $( "#book" ).animate({
+//     width: [ "toggle", "swing" ],
+//     height: [ "toggle", "swing" ],
+//     opacity: "toggle"
+//   }, 5000, "linear", function() {
+//     $( this ).after( "<div>Animation complete.</div>" );
+//   });
+// })
+
+$('#container').on('click', )
