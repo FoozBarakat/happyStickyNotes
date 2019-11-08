@@ -19,8 +19,16 @@ h1 {
 }
 
 h3 {
-	font-size: 20px;
+	font-size: 25px;
+	font-family: 'Caveat', cursive;
+	font-weight: lighter;
 }
+
+.name {
+	color: #fff;
+	margin-left: 50px;
+	font-size: 30px;
+	}
 
 input {
 	height: 18px;
@@ -37,9 +45,9 @@ input {
 }
 
 .colors {
-	width: 40px;
-	height: 40px;
-	border: 1px solid black;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #fff;
 	border-radius: 50%;
 	cursor: pointer;
 	display: block;
@@ -92,18 +100,20 @@ input {
 
 #img_add {
 	float: right;
-	height: 40px;
-	width: 40px;
+	height: 50px;
+	width: 50px;
 	cursor: pointer;
 	position: fixed;
-	top: 620px;
-	right: 50px;
+	top: 600px;
+	right: 80px;
+	border: 2px solid #fff;
+	border-radius: 50%;
 }
 
 #div_add {
 	background-color: rgba(200,200,200,0.5);
 	height: 400px;
-	width: 600px;
+	width: 500px;
 	display: none;
 	position: fixed;
 	top: 150px;

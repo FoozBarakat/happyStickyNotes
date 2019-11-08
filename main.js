@@ -6,14 +6,14 @@ var students = [
 var id = 1;
 var currentSticky = '';
 var index;
-var color = 'pink';
+var color = 'yellow';
 var showName = '';
 
 $('#img_add').click( function() {
-	var name =  prompt('Please enter your list name');
+	var name =  prompt('Please enter your name');
 	var notStudent;
 	while (name === '') {
-		name =  prompt('Please enter your list name');
+		name =  prompt('Please enter your name');
 	}
 
 	if (name !== null) {
@@ -22,13 +22,15 @@ $('#img_add').click( function() {
 			if (students[i]['name'] === name) {
 				notStudent = 'false';
 				$('#sticky_place').html('');
-				$('#sticky_place').append("<h3><input type='checkbox' id='checkbox'>" + name + "</h3>");
-				var note = $("<div class='sticky pink' id='sticky" + id + "'" + "><textarea></textarea></div>")
+				//$('#sticky_place').append("<h3 class='nam'><input type='checkbox' id='checkbox'>" + name + "</h3>");
+				var holdName = "<h3 class='name'><input type='checkbox' id='checkbox'>" + name + "</h3>";
+				console.log(typeof holdName);
+				var note = $("<div class='sticky yellow' id='sticky" + id + "'" + "><textarea></textarea></div>")
 				currentSticky = 'sticky' + id;
 				id++;
 				index = i;
-				$('#sticky_place').append(note);
-				$('#div_add').show();				
+				$('#sticky_place').append(note, holdName);
+				$('#div_add').show().draggable({stack: ".sticky"});;				
 			}
 		} 
 		
@@ -74,13 +76,12 @@ $('#btn_new').click( function() {
  // show the name
 
  $('#sticky_place').on('click', 'input[type=checkbox]', function(event) {
- 	console.log(event.target.checked);
+
  	if (event.target.checked) {
  		showName = $(this).closest('h3').text();
  	} else {
  		showName = '';
  	}
 }); 
-
 
 
