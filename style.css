@@ -19,7 +19,7 @@ h1 {
 }
 
 h3 {
-	font-size: 25px;
+	font-size: 30px;
 	font-family: 'Caveat', cursive;
 	font-weight: lighter;
 }
@@ -28,7 +28,15 @@ h3 {
 	color: #fff;
 	margin-left: 50px;
 	font-size: 30px;
-	}
+}
+
+.positionName {
+	color: #000;
+	position: absolute;;
+	top: 170px;
+	left: 120px;
+	font-size: 25px;
+}
 
 input {
 	height: 18px;
@@ -88,8 +96,8 @@ input {
 }
 
 .sticky textarea {
-	width: 75%;
-	height: 75%;
+	width: 95%;
+	height: 95%;
 	font-size: 20px;
 	border: none;
 	background: transparent;
