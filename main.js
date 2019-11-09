@@ -15,6 +15,7 @@ var displaySticky = function(noteText) {
 	showName = '';
 	$('#div_add').hide();
 
+// filter by name
 	$('.sticky').on('click', 'h4#rbkMember', function() {
 		var member= $(this).closest('h4').text();
 		$('#container').html('');
@@ -60,6 +61,7 @@ $('#img_add').click( function() {
 					currentSticky = 'sticky' + id;
 					id++;
 					index = i;
+					
 					$('#sticky_place').append(note, holdName);
 					$('#div_add').show().draggable({stack: ".sticky"});;				
 			}
