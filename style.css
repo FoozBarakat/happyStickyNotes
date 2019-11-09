@@ -115,6 +115,10 @@ input {
 	outline: none;
 }
 
+.positionSticky {
+	float: left;
+}
+
 #img_add {
 	float: right;
 	height: 70px;
