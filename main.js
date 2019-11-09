@@ -8,14 +8,28 @@ var showName = '';
 // display the sticky note on the body		 
 var displaySticky = function(noteText) {
 	var newNote = $("<div class='sticky " + color + "' id='" + currentSticky + "'>" + '<h3 class="positionText">' + noteText +'</h3>' + "</div>").draggable({stack: ".sticky"}).selectable();
-	var x = "<h4 class='name positionName'>" + showName + "</h4>";
+	var x = "<h4 class='name positionName' id='rbkMember'>" + showName + "</h4>";
 	$('textarea').val("");
 	$('#container').append(newNote);
 	$('#' + currentSticky).append(x);
 	showName = '';
 	$('#div_add').hide();
-}
 
+	$('.sticky').on('click', 'h4#rbkMember', function() {
+		var member= $(this).closest('h4').text();
+		$('#container').html('');
+		for (var i = 0; i < students.length; i++) {
+			if ( students[i]['name'] === member ) {
+				for (var key in students[i]) {
+					if ( key !== 'name' ){
+						displaySticky(students[i][key]);
+					}
+				}			
+			}
+		}
+	});
+}
+/////////////////////////////////////////////
 
 // push the text in the students array
 var addSticky = function(noteText) {
@@ -75,7 +89,7 @@ $('#btn_new').click( function() {
 
 // change the color of sticky note
  $('.colors').click(function() {
- 	
+
  	if (currentSticky !== '') {
  		color = $(this).attr('class').split(' ')[0];
  		$('#' + currentSticky).removeClass();

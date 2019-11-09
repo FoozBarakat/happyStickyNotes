@@ -1,4 +1,4 @@
-var students = [{name: 'fooz'}, {name: 'abdlrrahman'}, {name: 'abdo'}, {name: 'adem'}, 
+var students = [{name: 'abdlrrahman'}, {name: 'abdo'}, {name: 'adem'}, 
 								{name: 'adnen'}, {name: 'ahmed'}, {name: 'ali'}, {name: 'amera'}, 
 								{name: 'aouini'}, {name: 'anas'}, {name: 'bilel'}, {name: 'dhia'}, 
 								{name: 'essam'}, {name: 'fares'}, {name: 'fatima'}, {name: 'firas'}, 
